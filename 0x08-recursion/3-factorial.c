@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
  * factorial - compute the factorial of a given number.
@@ -7,7 +7,7 @@
  */
 int factorial(int n)
 {
-	int fac = 1;
+	int fact = 1;
 
 	if (n < 0)
 		return (-1);
@@ -15,7 +15,6 @@ int factorial(int n)
 	else if (!n)
 		return (1);
 
-	fac = factorial(n - 1);
 
-	return (fac * n);
+	return (n * factorial(n - 1));
 }
