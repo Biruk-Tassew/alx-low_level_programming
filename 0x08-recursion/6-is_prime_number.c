@@ -1,5 +1,4 @@
-#include "holberton.h"
-
+#include "main.h"
 /**
  * prime_checker - checks to see if number is prime
  * @f: factor check
