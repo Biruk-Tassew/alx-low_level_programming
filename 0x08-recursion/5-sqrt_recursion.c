@@ -11,7 +11,7 @@ int sqrt_check(int n, int base)
 		return (n);
 	if (n * n > base)
 		return (-1);
-	return (checker(n + 1, base));
+	return (sqrt_check(n + 1, base));
 }
 /**
  * _sqrt_recursion - returns the natural square root of a number
