@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 #include <stdlib.h>
 
 /**
@@ -17,10 +17,7 @@ unsigned int i;
 if (size == 0)
 	return (NULL);
 pointer = malloc(sizeof(char) * size);
-/*
- * Allocating a specific nb of bytes on the memory
- * and returning a pointer to the allocated memory
- */
+
 if (pointer == NULL)
 	return (NULL);
 else
