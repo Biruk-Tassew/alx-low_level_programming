@@ -11,21 +11,21 @@
 int *array_range(int min, int max)
 {
 	int i, l;
-	int *loc;
+	int *mem;
 
 	if (min > max)
 		return (NULL);
-	len = max - min + 1;
+	l = max - min + 1;
 /* dynamic memory space allocation */
-	loc = malloc(sizeof(int) * len);
+	mem = malloc(sizeof(int) * l);
 /* memory allocation fail exit */
-	if (loc == NULL)
+	if (mem == NULL)
 		return (NULL);
 /*filling the array with numbers from min to max */
 	for (i = min; i <= max; i++)
 	{
-		loc[i - min] = i;
+		mem[i - min] = i;
 	}
 
-	return (loc);
+	return (mem);
 }
