@@ -9,8 +9,11 @@
  */
 int sum_them_all(const unsigned int n, ...)
 {
+	if(n==0){
+	return 0;
+	}
 	unsigned int i;
-	int sum=0;
+	int sum;
 	va_list list;
 
 	va_start(list, n);
