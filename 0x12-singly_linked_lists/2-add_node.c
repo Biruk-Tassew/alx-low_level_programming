@@ -3,46 +3,45 @@
 #include <string.h>
 
 /**
- * _strlen - finds the length of a string
- * @str: string to be searched
+ * _strlen - count the nodes in the linked lisst
+ * @str: string to be sounted
  *
  * Return: length of the string
  */
-unsigned int _strlen(char *str)
+int _strlen(char *str)
 {
-	unsigned int i;
+	int count;
 
-	for (i = 0; str[i]; i++)
-		;
-	return (i);
+	for (count = 0; str[count]; count++);
+	return (count);
 }
 /**
  * add_node - add a node to the beginning of a linked list
  * @head: double pointer to the head of a linked list
  * @str: string to add to the new node
  *
- * Return: pointer to the new node .
+ * Return: pointer to the new node
  */
 
 list_t *add_node(list_t **head, const char *str)
 {
-	list_t *newnode;
+	list_t *nNode;
 
 	if (str == NULL)
 		return (NULL);
 
-	newnode = (list_t *)malloc(sizeof(list_t));
-	if (newnode == NULL)
+	nNode = (list_t *)malloc(sizeof(list_t));
+	if (nNode == NULL)
 		return (NULL);
 
-	newnode->str = strdup(str);
-	if (newnode->str == NULL)
+	nNde->str = strdup(str);
+	if (nNode->str == NULL)
 	{
-		free(newnode);
+		free(nNode);
 		return (NULL);
 	}
-	newnode->len = _strlen(newnode->str);
-	newnode->next = *head;
-	*head = newnode;
-	return (newnode);
+	(*nNode).len = _strlen(nNode->str);
+	(*nNode).next = *head;
+	*head = nNode;
+	return (nNode);
 }
