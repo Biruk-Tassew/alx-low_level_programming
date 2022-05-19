@@ -40,7 +40,7 @@ list_t *add_node(list_t **head, const char *str)
 		free(nNode);
 		return (NULL);
 	}
-	(*nNode).len = _strlen(nNode->str);
+	(*nNode).len = _strlen((*nNode).str);
 	(*nNode).next = *head;
 	*head = nNode;
 	return (nNode);
