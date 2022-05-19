@@ -7,7 +7,7 @@
  * Description: prints all the elements of a list
  * Return: number of nodes
  */
-int print_list(const listint_t *h)
+size_t print_list(const listint_t *h)
 {
 	int count=0;
 
