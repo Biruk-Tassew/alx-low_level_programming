@@ -8,9 +8,9 @@
  *
  * Return: length of the string
  */
-unsigned int _strlen(char *str)
+int _strlen(char *str)
 {
-	unsigned int count;
+	int count;
 
 	for (count = 0; str[count]; count++);
 	return (count);
@@ -25,23 +25,23 @@ unsigned int _strlen(char *str)
 
 list_t *add_node(list_t **head, const char *str)
 {
-	list_t *nNode;
+	list_t *newnode;
 
 	if (str == NULL)
 		return (NULL);
 
-	nNode = (list_t *)malloc(sizeof(list_t));
-	if (nNode == NULL)
+	newnode = (list_t *)malloc(sizeof(list_t));
+	if (newnode == NULL)
 		return (NULL);
 
-	nNde->str = strdup(str);
-	if (nNode->str == NULL)
+	newnode->str = strdup(str);
+	if (newnode->str == NULL)
 	{
-		free(nNode);
+		free(newnode);
 		return (NULL);
 	}
-	(*nNode).len = _strlen((*nNode).str);
-	(*nNode).next = *head;
-	*head = nNode;
-	return (nNode);
+	(*newnode).len = _strlen((*newnode).str);
+	(*newnode).next = *head;
+	*head = newnode;
+	return (newnode);
 }
