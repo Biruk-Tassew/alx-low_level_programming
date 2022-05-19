@@ -18,6 +18,6 @@ typedef struct listint_s
 	struct listint_s *next;
 } listint_t;
 
-int print_list(const listint_t *h);
+size_t print_list(const listint_t *h);
 
 #endif
