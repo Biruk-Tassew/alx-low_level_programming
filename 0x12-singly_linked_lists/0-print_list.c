@@ -7,15 +7,18 @@
  * Description: prints all the elements of a list
  * Return: number of nodes
  */
-size_t print_listint(const listint_t *h)
+void print_list(const listint_t *list)
 {
-	int count = 0;
+	int i;
 
-	while (h != NULL)
+	i = 0;
+	while (list)
 	{
-		printf("%d\n", h->n);
-		h = h->next;
-		count++;
+		if (i > 0)
+			printf(", ");
+		printf("%d", list->n);
+		++i;
+		list = list->next;
 	}
-	return (count);
+	printf("\n");
 }
