@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -12,9 +12,9 @@
  */
 size_t _strlen(char *str)
 {
-	size_t i;
+	size_t count;
 
-	for (i = 0; str[i]; i++)
+	for (count = 0; str[count]; count++)
 		;
 	return (i);
 }
