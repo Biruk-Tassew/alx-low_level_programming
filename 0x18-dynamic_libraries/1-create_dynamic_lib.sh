@@ -1,3 +1,3 @@
 #!/bin/bash
-gcc *.c -c -fpic
-gcc *.o -shared -o liball.so
+gcc *.c -c -fPIC
+gcc *.o -shared -o libholberton.so
