@@ -3,22 +3,25 @@
 
 
 def island_perimeter(grid):
-    """Calculate perimeter of a grid island. 
+    """Calculate perimeter of a grid island. Grid is a list of equal sized
+    lists.
     """
-    if not grid:
+    height = len(grid) - 1
+    if height == 0:
         return 0
-
-    def sum_adjacent(i, j):
-        adjacent = (i + 1, j), (i - 1, j), (i, j + 1), (i, j - 1),
-        res = 0
-        for x, y in adjacent:
-            if x < 0 or y < 0 or x == len(grid) or y == len(grid[0]) or grid[x][y] == 0:
-                res += 1
-        return res
-
-    count = 0
-    for i in range(len(grid)):
-        for j in range(len(grid[0])):
-            if grid[i][j] == 1:
-                count += sum_adjacent(i, j)
-    return count
+    width = len(grid[0]) - 1
+    if width == 0:
+        return 0
+    perimeter = 0
+    for x in range(width + 1):
+        for y in range(height + 1):
+            if grid[y][x] == 1:
+                if x == width or grid[y][x + 1] == 0:
+                    perimeter += 1
+                if x == 0 or grid[y][x - 1] == 0:
+                    perimeter += 1
+                if y == height or grid[y + 1][x] == 0:
+                    perimeter += 1
+                if y == 0 or grid[y - 1][x] == 0:
+                    perimeter += 1
+    return perimeter
